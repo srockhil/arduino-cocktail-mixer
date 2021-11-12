@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400&display=swap');
+
+.img-fluid-small {
+    width: 2em;
+    height: auto;
+}
+
+.blue {
+    background-color: #95badd42;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+nav {
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+}

@@ -26,11 +26,11 @@ function Menu(){
         return Object.keys(drinks).map((key)=>{
             return (
                 <div className={"p-3"}>
-                    <span className={"drink-name"}>  {key} </span>
-                    <span className={"text-right"}> <Button className={"btn-small"}> order ! </Button> </span>
+                    <span className={"drink-name subtitle-font"}>  {key} </span>
+                    <span > <Button className={"theme-btn sm blue"}> order ! </Button> </span>
 
                     <br/>
-                    <span className={"drink-text"}> {drinks[key]} </span>
+                    <span className={"drink-text small-font"}> {drinks[key]} </span>
                 </div>
             )
         })
@@ -40,8 +40,8 @@ function Menu(){
         <div className={'paper'} >
             <Container >
                 <Row className={"py-3 px-xs-1 px-md-3"} >
-                    <span className={"header-text"}> BAR </span>
-                    <span className={"header-text"}> MENU </span>
+                    <span className={"title-font right"}> BAR </span>
+                    <span className={"title-font right"}> MENU </span>
                     <span> <hr/> </span>
 
                     <div className={"drink-container"} >

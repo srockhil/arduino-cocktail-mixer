@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
+
+:root {
+    --sheer-blue: #95badd62;
+    --font : 'Bitter', serif;
+}
+
+
+.blue {
+    background-color: var(--sheer-blue);
+}
+
+.theme-btn {
+
+    padding: .25em .5em !important;
+    font-family: var(--font) !important;
+    color: black !important;
+}
+
+.theme-btn.blue {
+    border : none !important;
+    background-color: var(--sheer-blue) !important;
+}
+
+.theme-btn.white {
+    border-color: var(--sheer-blue) !important;
+    background-color: white !important;
+}
+
+.theme-btn.sm {
+    font-size: .8em !important;
+    margin-left: 1em !important;
+
+}
+
+.theme-btn.md {
+    font-size: 1.1em !important;
+
+}
+
+.theme-btn:hover {
+    color: orange !important;
+
+}
+
+.title-font {
+    font-size: 2em;
+    font-family: var(--font);
+    line-height: 1.3em;
+    font-weight: 200;
+}
+
+.title-font.right {
+    text-align: right;
+}
+
+
+.subtitle-font {
+    font-size: 1em;
+    font-family: var(--font);
+    font-weight: 500;
+    line-height: 1em;
+    text-transform: capitalize;
+}
+
+.subtitle-font.left {
+    text-align: left;
+}
+
+.small-font{
+    font-size: 1em;
+    font-family: var(--font);
+    font-weight: 300;
+    line-height: 1em;
+}
+
+.medium-font {
+    font-size: 1.2em;
+    font-family: var(--font);
+    font-weight: 300;
+    line-height: 1em;
+}
+
+.small-font.left {
+    text-align: left;
+}

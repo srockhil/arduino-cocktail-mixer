@@ -6,6 +6,7 @@ import MyNav from './MyNav'
 
 
 import './App.css';
+import './theme.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
                     </Col>
                     <Col md={5} xs={1}> </Col>
                 </Row>
-                <Row className={"d-md-none"} > HELLO </Row>
+
 
             </Container>
         </div>

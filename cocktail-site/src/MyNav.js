@@ -5,10 +5,9 @@ import Modal from "react-bootstrap/Modal"
 import { Gear } from 'react-bootstrap-icons';
 import Settings from './Settings'
 import { QuestionCircle } from 'react-bootstrap-icons';
-import './MyNav.css';
 import {useState} from "react";
 
-function MyNav() {
+function MyNav(props) {
 
     const [show, setShow] = useState(false);
 
@@ -18,7 +17,7 @@ function MyNav() {
 
     return (
         <>
-            <Navbar className={"blue rounded medium-font"} variant="light" sticky="top">
+            <Navbar className={"medium-font bg-primary bg-opacity-50"} bg- variant="primary" sticky="top">
                 <Container>
                     <Navbar.Brand href="#home"> <img className={'img-fluid-small'}
                                                      src={"./cocktail-polka-dots-stroke-by-Vexels.png"} alt={'Logo'}/>
@@ -31,8 +30,8 @@ function MyNav() {
             </Navbar>
 
 
-            <Modal show={show} onHide={hideModal}>
-                <Settings hide={hideModal}/>
+            <Modal className={"theme-font"} show={show} onHide={hideModal}>
+                <Settings hideModal={hideModal} data={props}/>
             </Modal>
         </>
     )

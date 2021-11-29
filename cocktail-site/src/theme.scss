@@ -1,0 +1,30 @@
+
+$theme-blue : #95badd62;
+$theme-blue-dark : #435973;
+$theme-orange : #ee8601;
+//for bootstrap
+$primary : #95badd62;
+$success : #0fa20f62;
+$danger : #ff000062;
+//for mdb
+$primary-color : #95badd62;
+$success-color : #0fa20f62;
+$danger-color : #ff000062;
+
+
+// nav theming
+$nav-tabs-link-active-color: $theme-blue-dark;
+$nav-link-color: black;
+$nav-link-hover-color: $theme-orange;
+$hover-color : $theme-orange;
+
+//button theming
+$btn-border-width : 0;
+$btn-margin-basic : 5,5;
+
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+//@import "node_modules/mdbreact/dist/css/mdb";
+
+

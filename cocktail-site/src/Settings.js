@@ -1,36 +1,31 @@
 import './Settings.css';
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
+import Pumps from './Pumps'
+import Drinks from './Drinks'
+
 
 
 
 function Settings(props){
 
 
-    let handleClose = () => {
-        alert("hello")
-        props.hide()
-    }
-
-
     return (
-        <Container>
-            <Modal.Header  >
-                 <span className={'title-font'}> Update Machine  </span>
-            </Modal.Header>
-            <Modal.Body> Woohoo, you're reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-                <Button className={"theme-btn md white"} onClick={handleClose}>
-                    Close
-                </Button>
-                <Button className={"theme-btn md blue"} >
-                    Save Changes
-                </Button>
-            </Modal.Footer>
-        </Container>
-
+            <Tabs defaultActiveKey="pumps" className="mb-3 medium-font blue-font" >
+                <Tab eventKey="pumps" title="Pumps" >
+                    <Container className={"pb-2"}>
+                        <Pumps hideModal={props.hideModal} pumps ={props.data.pumps}
+                               setPumps={props.data.setPumps} />
+                    </Container>
+                </Tab>
+                <Tab eventKey="drinks" title="Drinks" className={"blue-font"}>
+                    <Container className={"pb-2"}>
+                        <Drinks hideModal={props.hideModal} drinks ={props.data.drinks}
+                                setDrinks={props.data.setDrinks}/>
+                    </Container>
+                </Tab>
+            </Tabs>
 
     )
 

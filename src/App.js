@@ -46,6 +46,9 @@ function App() {
         // could output an error message if things are messed up
         //then set state if everything is all good
         setDrinks(drinks)
+        console.log(document.referrer);
+        console.log(document.location.href);
+
 
     }
 

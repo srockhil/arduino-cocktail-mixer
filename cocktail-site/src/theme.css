@@ -19,6 +19,20 @@
     opacity: 1 !important;
 }
 
+.small-input {
+    margin: .1em .05em !important;
+    padding-top: .1em !important;
+    align-content: center;
+}
+
+.md-form {
+    margin-top: 0 !important;
+}
+
+.small-col {
+    padding: 0 .2em !important;
+}
+
 
 .theme-font{
     font-family: var(--font);

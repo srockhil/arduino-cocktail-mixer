@@ -12,24 +12,20 @@ function Pumps (props) {
 
     function save_pumps () {
         let new_pumps = {}
-        let inputs = document.querySelectorAll('input')
+        let inputs = document.querySelectorAll('input[data-type=pump-input]')
         for (let i=0; i<inputs.length; i++){
             console.log(inputs[i])
             let key = inputs[i].getAttribute('data-label')
             let val = inputs[i].value
-            if (val === ""){
-                val = inputs[i].placeholder
-            }
             new_pumps[key] = val
         }
-        props.setPumps(new_pumps)
+        props.savePumps(new_pumps)
         props.hideModal()
 
 
     }
 
     function display_pumps () {
-        console.log(props.pumps)
         if (Object.keys(props.pumps).length === 0) {
             return (
                 <div className={"p-3"}>
@@ -42,7 +38,7 @@ function Pumps (props) {
             return (
                 <Row>
                     <Col className={"primary"}>
-                        <MDBInput hint={props.pumps[key]} data-label={key} label={"pump " + key}> </MDBInput>
+                        <MDBInput valueDefault={props.pumps[key]} data-label={key} label={"pump " + key} data-type={"pump-input"}> </MDBInput>
                     </Col>
                 </Row>
             )

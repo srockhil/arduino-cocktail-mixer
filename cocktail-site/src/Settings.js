@@ -16,13 +16,13 @@ function Settings(props){
                 <Tab eventKey="pumps" title="Pumps" >
                     <Container className={"pb-2"}>
                         <Pumps hideModal={props.hideModal} pumps ={props.data.pumps}
-                               setPumps={props.data.setPumps} />
+                               savePumps={props.data.savePumps} />
                     </Container>
                 </Tab>
                 <Tab eventKey="drinks" title="Drinks" className={"blue-font"}>
                     <Container className={"pb-2"}>
                         <Drinks hideModal={props.hideModal} drinks ={props.data.drinks}
-                                setDrinks={props.data.setDrinks}/>
+                                saveDrinks={props.data.saveDrinks}/>
                     </Container>
                 </Tab>
             </Tabs>

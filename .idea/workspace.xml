@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39e93304-5321-4f41-892e-bcf4f5974c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cocktail-site/src/Drinks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cocktail-site/src/Pumps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cocktail-site/src/theme.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocktail-site/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocktail-site/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocktail-site/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocktail-site/src/Drinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/Drinks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocktail-site/src/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocktail-site/src/MyNav.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cocktail-site/src/MyNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/MyNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cocktail-site/src/Pumps.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/Pumps.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocktail-site/src/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/Settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cocktail-site/src/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/cocktail-site/src/theme.css" afterDir="false" />
     </list>
@@ -93,7 +88,7 @@
       <workItem from="1637356508453" duration="4379000" />
       <workItem from="1638043220748" duration="1358000" />
       <workItem from="1638152803805" duration="1029000" />
-      <workItem from="1638154339995" duration="9844000" />
+      <workItem from="1638154339995" duration="21347000" />
     </task>
     <servers />
   </component>

@@ -32,9 +32,26 @@ function App() {
         "4": "orange juice",
         "5": "coffee liqueur" });
 
+
+    function savePumps (pumps) {
+        // send pump data to server, make sure its all good
+        // could output an error message if things are messed up
+        //then set state if everything is all good
+        setPumps(pumps)
+
+    }
+
+    function saveDrinks (drinks) {
+        // send drink data to server, make sure its all good
+        // could output an error message if things are messed up
+        //then set state if everything is all good
+        setDrinks(drinks)
+
+    }
+
     return (
         <div className={"theme-font"}>
-            <MyNav drinks={drinks} setDrinks={setDrinks} pumps={pumps} setPumps={setPumps} />
+            <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} />
             <Container>
                 <Row className={"py-5"} >
                     <Col xs={1} />

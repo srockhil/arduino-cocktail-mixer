@@ -46,14 +46,14 @@ function App() {
         // could output an error message if things are messed up
         //then set state if everything is all good
         setDrinks(drinks)
-        console.log(document.referrer);
-        console.log(document.location.href);
 
 
     }
 
     function openTest () {
-        window.open('http://' + window.location.hostname + '/test', '_self', "false")
+        window.open('http://' + document.location.hostname + '/test', '_self', "false")
+        console.log(document.referrer);
+        console.log(document.location.href);
     }
 
     return (

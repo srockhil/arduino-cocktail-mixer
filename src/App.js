@@ -51,9 +51,7 @@ function App() {
     }
 
     function openTest () {
-        window.open('http://' + document.location.hostname + '/test', '_self', "false")
-        console.log(document.referrer);
-        console.log(document.location.href);
+        window.open('http://' + document.referrer + '/test', '_self', "false")
     }
 
     return (

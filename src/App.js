@@ -49,9 +49,14 @@ function App() {
 
     }
 
+    function openTest () {
+        window.open('http://' + window.location.hostname + '/test', '_self', "false")
+    }
+
     return (
         <div className={"theme-font"}>
             <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} />
+            <button type='button' onClick={openTest} >Test</button>
             <Container>
                 <Row className={"py-5"} >
                     <Col xs={1} />

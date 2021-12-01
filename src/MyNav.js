@@ -6,6 +6,7 @@ import { Gear } from 'react-bootstrap-icons';
 import Settings from './Settings'
 import { QuestionCircle } from 'react-bootstrap-icons';
 import {useState} from "react";
+import {Alert} from "react-bootstrap";
 
 function MyNav(props) {
 
@@ -14,6 +15,7 @@ function MyNav(props) {
     const showModal = () => setShow(true);
 
     const hideModal = () => setShow(false);
+    console.log(props.status)
 
     return (
         <>
@@ -26,6 +28,7 @@ function MyNav(props) {
                         <Nav.Link onClick={showModal}> <Gear/> Settings</Nav.Link>
                         <Nav.Link href="#features"> <QuestionCircle/> Help</Nav.Link>
                     </Nav>
+                    <Alert className="alert-primary"><h4>Status: {props.status}</h4></Alert>
                 </Container>
             </Navbar>
 

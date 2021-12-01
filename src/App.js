@@ -16,8 +16,10 @@ const CONNECT = true;
 
 function App() {
 
-    const [drinks, setDrinks] = useState([])
+    const [drinks, setDrinks] = useState([]);
     const [pumps, setPumps] = useState([]);
+
+    const [status, setStatus] = useState("Loading...");
 
     useEffect(() => {
         requestDrinks()
@@ -79,7 +81,9 @@ function App() {
                 .then((response) => response.json())
                 .then(data => {
                     if (data['success']) {
-                        //making drink
+                        setStatus("Making: " + drink['name'])
+                    } else {
+                        alert(data['error']);
                     }
                 })
         }
@@ -146,8 +150,7 @@ function App() {
 
     return (
         <div className={"theme-font"}>
-            <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} />
-            <button type='button' onClick={openTest} >Test</button>
+            <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} status={status}/>
             <Container>
                 <Row className={"py-5"} >
                     <Col xs={2} sm={3}/>

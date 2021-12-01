@@ -18,7 +18,7 @@ function Menu(props){
             return (
                 <div className={"p-3"} key={i}>
                     <span className={"subtitle-font"}>{drink.name} </span>
-                    <span> <Button className={" bg-primary bg-opacity-50 btn-sm"}> order ! </Button> </span>
+                    <span> <Button className={" bg-primary bg-opacity-50 btn-sm"} onClick={() => props.order(drink)}> order ! </Button> </span>
                     <br/>
                     <span className={"small-font"}> {drink.description} </span>
                 </div>

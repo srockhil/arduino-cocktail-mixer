@@ -67,6 +67,24 @@ function App() {
         }
     }
 
+    function order (drink) {
+
+        if (CONNECT) {
+            fetch('http://' + window.location.hostname + '/make-drink', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(drink)})
+                .then((response) => response.json())
+                .then(data => {
+                    if (data['success']) {
+                        //making drink
+                    }
+                })
+        }
+    }
+
     function openTest () {
         window.open(document.referrer + 'test', '_self', "false")
     }
@@ -134,7 +152,7 @@ function App() {
                 <Row className={"py-5"} >
                     <Col xs={2} sm={3}/>
                     <Col xs={8} sm={6}>
-                        <Menu drinks={drinks}/>
+                        <Menu drinks={drinks} order={order}/>
                     </Col>
                     <Col xs={2} sm={3}/>
 

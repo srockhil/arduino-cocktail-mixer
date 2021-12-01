@@ -14,13 +14,13 @@ function Menu(props){
                     <span className={"small-font left"}> Add to the menu in settings!</span> <br/>
                 </div>
             )}
-        return Object.keys(props.drinks).map((key)=>{
+        return props.drinks.map((drink, i)=>{
             return (
-                <div className={"p-3"}>
-                    <span className={"subtitle-font"}>{key} </span>
+                <div className={"p-3"} key={i}>
+                    <span className={"subtitle-font"}>{drink.name} </span>
                     <span> <Button className={" bg-primary bg-opacity-50 btn-sm"}> order ! </Button> </span>
                     <br/>
-                    <span className={"small-font"}> {props.drinks[key][0]} </span>
+                    <span className={"small-font"}> {drink.description} </span>
                 </div>
             )
         })
@@ -33,7 +33,7 @@ function Menu(props){
                     <span className={"title-font right"}> BAR </span>
                     <span className={"title-font right"}> MENU </span>
                     <span> <hr/> </span>
-                    <div className={"drink-container"} >
+                    <div className={"scroll-container"} >
                         {display_drinks()}
                     </div>
                 </Row>

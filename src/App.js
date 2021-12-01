@@ -29,7 +29,7 @@ function App() {
     function savePumps (pumps) {
 
         if (CONNECT) {
-            fetch(document.referrer + 'pumps', {
+            fetch('http://' + window.location.hostname + '/pumps', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function App() {
         //then set state if everything is all good
 
         if (CONNECT) {
-            fetch(document.referrer + 'drinks', {
+            fetch('http://' + window.location.hostname + '/drinks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ function App() {
 
     function requestPumps () {
         if (CONNECT) {
-            fetch(document.referrer + 'pumps')
+            fetch('http://' + window.location.hostname + '/pumps')
                 .then((response) => response.json())
                 .then(data => {
                     setPumps(data)

@@ -23,7 +23,7 @@ function MyNav(props) {
                                                      src={"./cocktail-polka-dots-stroke-by-Vexels.png"} alt={'Logo'}/>
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home" onClick={showModal}> <Gear/> Settings</Nav.Link>
+                        <Nav.Link onClick={showModal}> <Gear/> Settings</Nav.Link>
                         <Nav.Link href="#features"> <QuestionCircle/> Help</Nav.Link>
                     </Nav>
                 </Container>

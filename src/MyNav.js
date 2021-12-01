@@ -15,7 +15,6 @@ function MyNav(props) {
     const showModal = () => setShow(true);
 
     const hideModal = () => setShow(false);
-    console.log(props.status)
 
     return (
         <>
@@ -26,7 +25,7 @@ function MyNav(props) {
                     </Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link onClick={showModal}> <Gear/> Settings</Nav.Link>
-                        <Nav.Link href="#features"> <QuestionCircle/> Help</Nav.Link>
+                        <Nav.Link> <QuestionCircle/> Help</Nav.Link>
                     </Nav>
                     <Alert className="alert-primary"><h4>Status: {props.status}</h4></Alert>
                 </Container>

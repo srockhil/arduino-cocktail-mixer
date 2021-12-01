@@ -146,6 +146,28 @@ function App() {
         }
     }
 
+    function updateStatus() {
+        if (CONNECT) {
+            fetch('http://' + window.location.hostname + '/status')
+                .then((response) => response.json())
+                .then(data => {
+                    setStatus(data[status])
+                }).catch((error) => {
+                    console.log('updateStatus error: ' + error);
+            })
+        } else {
+            console.log('Status update');
+        }
+    }
+
+    function updateStatusHelper () {
+        setTimeout(() => {
+            updateStatus();
+            updateStatusHelper();
+        }, 1000);
+    }
+    updateStatusHelper();
+
 
 
     return (

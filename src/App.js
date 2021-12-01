@@ -146,14 +146,20 @@ function App() {
         }
     }
 
-    function updateStatus() {
+    function updateStatus(callback) {
         if (CONNECT) {
             fetch('http://' + window.location.hostname + '/status')
                 .then((response) => response.json())
                 .then(data => {
                     setStatus(data['status']);
+                    if (callback) {
+                        callback();
+                    }
                 }).catch((error) => {
                     console.log('updateStatus error: ' + error);
+                    if (callback) {
+                        callback();
+                    }
             })
         } else {
             console.log('Status update');
@@ -162,8 +168,7 @@ function App() {
 
     function updateStatusHelper () {
         setTimeout(() => {
-            updateStatus();
-            updateStatusHelper();
+            updateStatus(updateStatusHelper);
         }, 5000);
     }
     updateStatusHelper();

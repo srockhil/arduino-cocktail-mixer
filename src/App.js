@@ -24,6 +24,7 @@ function App() {
     useEffect(() => {
         requestDrinks()
         requestPumps()
+        updateStatusHelper();
     },[]);
 
 
@@ -164,6 +165,9 @@ function App() {
             })
         } else {
             console.log('Status update');
+            if (callback) {
+                callback();
+            }
         }
     }
 
@@ -172,7 +176,6 @@ function App() {
             updateStatus(updateStatusHelper);
         }, 5000);
     }
-    updateStatusHelper();
 
 
 

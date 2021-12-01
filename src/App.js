@@ -151,7 +151,7 @@ function App() {
             fetch('http://' + window.location.hostname + '/status')
                 .then((response) => response.json())
                 .then(data => {
-                    setStatus(data[status])
+                    setStatus(data['status']);
                 }).catch((error) => {
                     console.log('updateStatus error: ' + error);
             })

@@ -152,6 +152,7 @@ function App() {
                 .then((response) => response.json())
                 .then(data => {
                     setStatus(data['status']);
+                    console.log('Status update');
                     if (callback) {
                         callback();
                     }

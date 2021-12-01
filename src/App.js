@@ -40,6 +40,11 @@ function App() {
         //then set state if everything is all good
         setDrinks(drinks)
 
+
+    }
+
+    function openTest () {
+        window.open(document.referrer + 'test', '_self', "false")
     }
 
 
@@ -75,6 +80,7 @@ function App() {
     return (
         <div className={"theme-font"}>
             <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} />
+            <button type='button' onClick={openTest} >Test</button>
             <Container>
                 <Row className={"py-5"} >
                     <Col xs={2} sm={3}/>

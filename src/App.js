@@ -10,27 +10,39 @@ import 'mdbreact/dist/css/mdb.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './theme.css';
 import './theme.scss';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-
+const CONNECT = true;
 
 function App() {
 
-    const [drinks, setDrinks] = useState(requestPumps())
+    const [drinks, setDrinks] = useState([])
+    const [pumps, setPumps] = useState([]);
 
-    const [pumps, setPumps] = useState(requestDrinks());
+    useEffect(() => {
+        requestDrinks()
+        requestPumps()
+    },[]);
+
 
 
     function savePumps (pumps) {
-        const request = {
-            method: 'POST',
-            headers : { 'Content-Type': 'application/json' },
-            body: JSON.stringify(pumps)
+
+        if (CONNECT) {
+            fetch(document.referrer + 'pumps', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(pumps)
+            })
+                .then((response) => response.json())
+                .then(data => {
+                    if (data['success']) {
+                        setPumps(pumps)
+                    }
+                })
         }
-
-
-        //only set pumps upon success
-        setPumps(pumps)
 
     }
 
@@ -38,9 +50,21 @@ function App() {
         // send drink data to server, make sure its all good
         // could output an error message if things are messed up
         //then set state if everything is all good
-        setDrinks(drinks)
 
-
+        if (CONNECT) {
+            fetch(document.referrer + 'drinks', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(drinks)})
+                .then((response) => response.json())
+                .then(data => {
+                    if (data['success']) {
+                        setDrinks(drinks)
+                    }
+                })
+        }
     }
 
     function openTest () {
@@ -48,31 +72,46 @@ function App() {
     }
 
 
-    function requestPumps () {
-
-        return [{name: "moscow mule",
-            description: "made with vodka, spicy ginger beer, and lime juice, garnished with a slice or wedge of lime.",
-            recipe: {"vodka": "1.5", "ginger beer" : "6"}
-        },
-        {name: "espresso martini",
-            description: "cold, coffee-flavored cocktail made with vodka, espresso coffee, and coffee liqueur.",
-            recipe: {"coffee liqueur" : "2", "vodka" : "1.5" }
-        },
-        {name: "spicy margarita",
-            description: "tequila, orange liqueur, lime juice and jalapeño.",
-            recipe: {"orange juice": "3", "tequila" : "1.5"}
-        }]
+    function requestDrinks () {
+        if (CONNECT) {
+            fetch(document.referrer + 'drinks')
+                .then((response) => response.json())
+                .then(data => {
+                    setDrinks(data)
+                })
+        } else {
+            setDrinks([{name: "moscow mule",
+                description: "made with vodka, spicy ginger beer, and lime juice, garnished with a slice or wedge of lime.",
+                recipe: {"vodka": "1.5", "ginger beer" : "6"}
+            },
+                {name: "espresso martini",
+                    description: "cold, coffee-flavored cocktail made with vodka, espresso coffee, and coffee liqueur.",
+                    recipe: {"coffee liqueur" : "2", "vodka" : "1.5" }
+                },
+                {name: "spicy margarita",
+                    description: "tequila, orange liqueur, lime juice and jalapeño.",
+                    recipe: {"orange juice": "3", "tequila" : "1.5"}
+                }]);
+        }
     }
 
 
-    function requestDrinks () {
-        return [
-            "ginger beer",
-            "vodka",
-            "tequila",
-            "orange juice",
-            "coffee liqueur"
-        ]
+    function requestPumps () {
+        if (CONNECT) {
+            fetch(document.referrer + 'pumps')
+                .then((response) => response.json())
+                .then(data => {
+                    setPumps(data)
+                })
+        } else {
+            setPumps([
+                "ginger beer",
+                "vodka",
+                "tequila",
+                "orange juice",
+                "coffee liqueur"
+            ]);
+        }
     }
 
 

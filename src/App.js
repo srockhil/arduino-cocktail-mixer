@@ -164,7 +164,7 @@ function App() {
         setTimeout(() => {
             updateStatus();
             updateStatusHelper();
-        }, 1000);
+        }, 5000);
     }
     updateStatusHelper();
 

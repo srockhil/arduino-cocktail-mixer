@@ -74,7 +74,17 @@ function App() {
 
     function requestDrinks () {
         if (CONNECT) {
-            fetch(document.referrer + 'drinks')
+            // fetch('http://192.168.1.99/drinks', {
+            //     headers: {
+            //         'Access-Control-Allow-Origin': '*',
+            //         'Access-Control-Allow-Private-Network': true,
+            //     }
+            // })
+            //     .then((response) => response.json())
+            //     .then(data => {
+            //         setDrinks(data)
+            //     })
+            fetch('http://' + window.location.hostname + '/drinks')
                 .then((response) => response.json())
                 .then(data => {
                     setDrinks(data)

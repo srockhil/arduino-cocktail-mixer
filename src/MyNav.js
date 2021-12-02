@@ -6,7 +6,7 @@ import { Gear } from 'react-bootstrap-icons';
 import Settings from './Settings'
 import { QuestionCircle } from 'react-bootstrap-icons';
 import {useState} from "react";
-import {Alert} from "react-bootstrap";
+import {Alert, Button, Row, ButtonGroup} from "react-bootstrap";
 
 function MyNav(props) {
 
@@ -27,7 +27,18 @@ function MyNav(props) {
                         <Nav.Link onClick={showModal}> <Gear/> Settings</Nav.Link>
                         <Nav.Link> <QuestionCircle/> Help</Nav.Link>
                     </Nav>
-                    <Alert className="alert-primary"><h4>Status: {props.status}</h4></Alert>
+                    <Alert className="alert-primary">
+                        <Row>
+                            <h4>Status: {props.status}</h4>
+                        </Row>
+                        <Row>
+                            {/*<ButtonGroup size="sm">*/}
+                            {/*    <Button variant="primary" className={props.autoUpdateStatus && 'active'} onClick={() => props.setAutoUpdateStatus(true)}>Auto</Button>*/}
+                            {/*    <Button variant="primary" className={!props.autoUpdateStatus && 'active'} onClick={() => props.setAutoUpdateStatus(false)}>Off</Button>*/}
+                            {/*</ButtonGroup>*/}
+                            <Button size="sm" onClick={() => props.updateStatus(false)}>Refresh</Button>
+                        </Row>
+                    </Alert>
                 </Container>
             </Navbar>
 

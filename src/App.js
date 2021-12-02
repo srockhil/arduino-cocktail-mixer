@@ -20,12 +20,33 @@ function App() {
     const [pumps, setPumps] = useState([]);
 
     const [status, setStatus] = useState("Loading...");
-
+    const [autoUpdateStatus, setAutoUpdateStatus] = useState(false);
+    const autoUpdateNonState = false
     useEffect(() => {
         requestDrinks()
         requestPumps()
-        updateStatusHelper();
+        updateStatus(false);
+        // updateStatusHelper();
+
     },[]);
+
+
+    // function updateStatusHelper () {
+    //     if (autoUpdateNonState) {
+    //         updateStatus(autoUpdateNonState && (() => {
+    //             setTimeout(() => {
+    //                 updateStatusHelper();
+    //             }, 1000);
+    //         }))
+    //     } else {
+    //         setTimeout(() => {
+    //             updateStatusHelper();
+    //         }, 1000)
+    //     }
+    //
+    // }
+
+
 
 
 
@@ -82,7 +103,7 @@ function App() {
                 .then((response) => response.json())
                 .then(data => {
                     if (data['success']) {
-                        updateStatusHelper();
+                        updateStatus(false);
                     } else {
                         alert(data['error']);
                     }
@@ -93,16 +114,6 @@ function App() {
 
     function requestDrinks () {
         if (CONNECT) {
-            // fetch('http://192.168.1.99/drinks', {
-            //     headers: {
-            //         'Access-Control-Allow-Origin': '*',
-            //         'Access-Control-Allow-Private-Network': true,
-            //     }
-            // })
-            //     .then((response) => response.json())
-            //     .then(data => {
-            //         setDrinks(data)
-            //     })
             fetch('http://' + window.location.hostname + '/drinks')
                 .then((response) => response.json())
                 .then(data => {
@@ -167,17 +178,11 @@ function App() {
         }
     }
 
-    function updateStatusHelper () {
-        setTimeout(() => {
-            updateStatus(updateStatusHelper);
-        }, 5000);
-    }
-
 
 
     return (
         <div className={"theme-font"}>
-            <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} status={status}/>
+            <MyNav drinks={drinks} saveDrinks={saveDrinks} pumps={pumps} savePumps={savePumps} status={status} updateStatus={updateStatus} autoUpdateStatus={autoUpdateStatus} setAutoUpdateStatus={setAutoUpdateStatus}/>
             <Container>
                 <Row className={"py-5"} >
                     <Col xs={2} sm={3}/>

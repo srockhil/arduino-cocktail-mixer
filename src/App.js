@@ -82,16 +82,12 @@ function App() {
                 .then((response) => response.json())
                 .then(data => {
                     if (data['success']) {
-                        setStatus("Making: " + drink['name'])
+                        updateStatusHelper();
                     } else {
                         alert(data['error']);
                     }
                 })
         }
-    }
-
-    function openTest () {
-        window.open(document.referrer + 'test', '_self', "false")
     }
 
 
